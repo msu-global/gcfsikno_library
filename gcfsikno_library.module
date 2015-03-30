@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the gcfsikno_library feature.
+ */
+
+include_once 'gcfsikno_library.features.inc';
