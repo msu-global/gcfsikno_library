@@ -1,4 +1,4 @@
-name = gcfsikno_library
+name = GCFSI Knowledge Platform Resource Library
 description = A Features module that contains configuration and custom code for the resource library feature.
 core = 7.x
 package = GCFSI Knowledge Platform
