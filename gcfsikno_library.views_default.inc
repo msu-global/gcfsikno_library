@@ -77,23 +77,15 @@ function gcfsikno_library_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
+  $handler->display->display_options['style_plugin'] = 'views_spartan_table_plugin_style';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'type' => 'type',
     'created' => 'created',
     'field_name' => 'field_name',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'type' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -116,9 +108,9 @@ function gcfsikno_library_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['bootstrap_styles'] = array(
-    'striped' => 'striped',
-    'hover' => 'hover',
+    'striped' => 0,
     'bordered' => 0,
+    'hover' => 0,
     'condensed' => 0,
   );
   /* Relationship: Content: Author */
