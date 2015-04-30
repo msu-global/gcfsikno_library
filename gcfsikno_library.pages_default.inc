@@ -161,7 +161,7 @@ function gcfsikno_library_default_page_manager_pages() {
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Resource Library',
+    'title' => 'Library',
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(
