@@ -159,7 +159,18 @@ function gcfsikno_library_default_page_manager_pages() {
   $page->admin_description = 'A list of library resources.';
   $page->path = 'library';
   $page->access = array();
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Resource Library',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -196,7 +207,7 @@ function gcfsikno_library_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Resource Library';
   $display->uuid = '4fc5205f-0ec1-4586-890e-fd164c8eeb91';
   $display->content = array();
   $display->panels = array();
