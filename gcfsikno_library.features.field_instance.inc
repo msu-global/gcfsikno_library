@@ -10,6 +10,118 @@
 function gcfsikno_library_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'file-document-field_document_author'
+  $field_instances['file-document-field_document_author'] = array(
+    'bundle' => 'document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The author(s) of the uploaded document.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'media_link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'media_original' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_document_author',
+    'label' => 'Document Author',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance: 'file-document-field_document_type'
+  $field_instances['file-document-field_document_type'] = array(
+    'bundle' => 'document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The type of document.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+      'media_link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'media_original' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_document_type',
+    'label' => 'Document Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance: 'node-library_resource-body'
   $field_instances['node-library_resource-body'] = array(
     'bundle' => 'library_resource',
@@ -58,7 +170,7 @@ function gcfsikno_library_field_default_field_instances() {
   $field_instances['node-library_resource-field_resource'] = array(
     'bundle' => 'library_resource',
     'deleted' => 0,
-    'description' => 'The file or URL associated with the resource.  For uploaded content, these are publicly-viewable default, but you can change them to private.',
+    'description' => 'The file that is associated with this library resource.  A file could come from a YouTube URL, a file that you upload yourself, or a file that already exists within the Knowledge Platform.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -98,7 +210,7 @@ function gcfsikno_library_field_default_field_instances() {
             'pathauto' => 0,
             'transliterate' => 0,
           ),
-          'value' => '[file:type:machine-name]',
+          'value' => '[file:type:machine-name]/[current-date:logical_year]',
         ),
         'retroactive_update' => 0,
       ),
@@ -111,20 +223,21 @@ function gcfsikno_library_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
-          'public' => 0,
+          'oembed' => 'oembed',
+          'private' => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 0,
-          'video' => 0,
+          'audio' => 'audio',
+          'document' => 'document',
+          'image' => 'image',
+          'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
@@ -135,8 +248,12 @@ function gcfsikno_library_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Document Author');
+  t('Document Type');
   t('Resource');
-  t('The file or URL associated with the resource.  For uploaded content, these are publicly-viewable default, but you can change them to private.');
+  t('The author(s) of the uploaded document.');
+  t('The file that is associated with this library resource.  A file could come from a YouTube URL, a file that you upload yourself, or a file that already exists within the Knowledge Platform.');
+  t('The type of document.');
 
   return $field_instances;
 }

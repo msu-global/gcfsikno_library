@@ -127,6 +127,21 @@ function gcfsikno_library_views_default_views() {
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['label'] = 'Author';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Relationship: Content: Resource (field_resource:fid) */
+  $handler->display->display_options['relationships']['field_resource_fid']['id'] = 'field_resource_fid';
+  $handler->display->display_options['relationships']['field_resource_fid']['table'] = 'field_data_field_resource';
+  $handler->display->display_options['relationships']['field_resource_fid']['field'] = 'field_resource_fid';
+  $handler->display->display_options['relationships']['field_resource_fid']['label'] = 'Referenced file';
+  $handler->display->display_options['relationships']['field_resource_fid']['required'] = TRUE;
+  /* Field: File: Mime type */
+  $handler->display->display_options['fields']['filemime']['id'] = 'filemime';
+  $handler->display->display_options['fields']['filemime']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['filemime']['field'] = 'filemime';
+  $handler->display->display_options['fields']['filemime']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['fields']['filemime']['label'] = 'File';
+  $handler->display->display_options['fields']['filemime']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['filemime']['link_to_file'] = TRUE;
+  $handler->display->display_options['fields']['filemime']['filemime_image'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

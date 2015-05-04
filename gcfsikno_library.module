@@ -5,3 +5,22 @@
  */
 
 include_once 'gcfsikno_library.features.inc';
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ *
+ * Adds "Create new library resource" button on the library resource page.
+ */
+function gcfsikno_library_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  global $user;
+  if ($root_path == 'library') {
+    $item = menu_get_item('node/add/library-resource');
+    if ($item['access']) {
+      $item['title'] = t('Upload new library resource');
+      $data['actions']['output'][] = array(
+        '#theme' => 'menu_local_action',
+        '#link' => $item,
+      );
+    }
+  }
+}
