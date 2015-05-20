@@ -9,6 +9,29 @@
  */
 function gcfsikno_library_taxonomy_default_vocabularies() {
   return array(
+    'document_authors' => array(
+      'name' => 'Document Authors',
+      'machine_name' => 'document_authors',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'resource_type' => array(
       'name' => 'Document Type',
       'machine_name' => 'resource_type',
