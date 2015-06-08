@@ -158,7 +158,10 @@ function gcfsikno_library_default_page_manager_pages() {
   $page->admin_title = 'Resource Library';
   $page->admin_description = 'A list of library resources.';
   $page->path = 'library';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Library',
