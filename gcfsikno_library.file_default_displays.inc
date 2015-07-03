@@ -163,7 +163,7 @@ function gcfsikno_library_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__file_field_file_download_link';
-  $file_display->weight = 0;
+  $file_display->weight = -44;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'text' => 'Download [file:name]',
@@ -173,7 +173,7 @@ function gcfsikno_library_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__file_field_file_table';
-  $file_display->weight = 0;
+  $file_display->weight = -49;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['image__teaser__file_field_file_table'] = $file_display;
@@ -181,7 +181,7 @@ function gcfsikno_library_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__file_field_file_url_plain';
-  $file_display->weight = 0;
+  $file_display->weight = -48;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['image__teaser__file_field_file_url_plain'] = $file_display;
@@ -189,9 +189,11 @@ function gcfsikno_library_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__file_field_media_large_icon';
-  $file_display->weight = 0;
+  $file_display->weight = -45;
   $file_display->status = FALSE;
-  $file_display->settings = '';
+  $file_display->settings = array(
+    'image_style' => '',
+  );
   $export['image__teaser__file_field_media_large_icon'] = $file_display;
 
   $file_display = new stdClass();
@@ -207,7 +209,7 @@ function gcfsikno_library_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__media_oembed_thumbnail';
-  $file_display->weight = 0;
+  $file_display->weight = -50;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'image_style' => '',
@@ -253,7 +255,9 @@ function gcfsikno_library_file_default_displays() {
   $file_display->name = 'video__default__file_field_media_large_icon';
   $file_display->weight = 0;
   $file_display->status = FALSE;
-  $file_display->settings = '';
+  $file_display->settings = array(
+    'image_style' => '',
+  );
   $export['video__default__file_field_media_large_icon'] = $file_display;
 
   $file_display = new stdClass();
@@ -265,6 +269,60 @@ function gcfsikno_library_file_default_displays() {
     'image_style' => '',
   );
   $export['video__default__media_oembed_thumbnail'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__file_field_file_default';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['video__teaser__file_field_file_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__file_field_file_download_link';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'text' => 'Download [file:name]',
+  );
+  $export['video__teaser__file_field_file_download_link'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__file_field_file_table';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['video__teaser__file_field_file_table'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__file_field_file_url_plain';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['video__teaser__file_field_file_url_plain'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__file_field_media_large_icon';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'image_style' => '',
+  );
+  $export['video__teaser__file_field_media_large_icon'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'video__teaser__media_oembed_thumbnail';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'image_style' => '',
+  );
+  $export['video__teaser__media_oembed_thumbnail'] = $file_display;
 
   return $export;
 }
