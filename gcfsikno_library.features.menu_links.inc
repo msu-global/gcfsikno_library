@@ -28,10 +28,10 @@ function gcfsikno_library_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Library');
-
 
   return $menu_links;
 }

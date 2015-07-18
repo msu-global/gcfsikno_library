@@ -199,13 +199,13 @@ function gcfsikno_library_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '[current-date:logical_year]',
-      'file_extensions' => 'txt doc docx pdf jpg jpeg gif png mp3 m4a aac m4v mp4 mpeg',
+      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm keynote numbers pages',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
             'pathauto' => 0,
-            'transliterate' => 0,
+            'transliterate' => 1,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
@@ -228,13 +228,13 @@ function gcfsikno_library_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'oembed' => 'oembed',
-          'private' => 'private',
           'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 'audio',
           'document' => 'document',
           'image' => 'image',
+          'presentation' => 'presentation',
           'video' => 'video',
         ),
         'browser_plugins' => array(
