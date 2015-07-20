@@ -227,30 +227,25 @@ function gcfsikno_library_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: File: Document Type */
+  $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
-  $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['field_name']['label'] = 'Posted by';
-  $handler->display->display_options['fields']['field_name']['click_sort_column'] = 'title';
-  $handler->display->display_options['fields']['field_name']['settings'] = array(
-    'format' => 'default',
-    'markup' => 0,
-    'output' => 'default',
-    'multiple' => 'default',
-    'multiple_delimiter' => ', ',
-    'multiple_and' => 'text',
-    'multiple_delimiter_precedes_last' => 'never',
-    'multiple_el_al_min' => '3',
-    'multiple_el_al_first' => '1',
-  );
+  /* Field: File: Document Author */
+  $handler->display->display_options['fields']['field_document_author']['id'] = 'field_document_author';
+  $handler->display->display_options['fields']['field_document_author']['table'] = 'field_data_field_document_author';
+  $handler->display->display_options['fields']['field_document_author']['field'] = 'field_document_author';
+  $handler->display->display_options['fields']['field_document_author']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['fields']['field_document_author']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_document_author']['delta_offset'] = '0';
   /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
@@ -278,6 +273,42 @@ function gcfsikno_library_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_resource' => 'library_resource',
   );
+  /* Filter criterion: File: Document Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Document Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'resource_type';
+  /* Filter criterion: File: Document Author (field_document_author) */
+  $handler->display->display_options['filters']['field_document_author_tid']['id'] = 'field_document_author_tid';
+  $handler->display->display_options['filters']['field_document_author_tid']['table'] = 'field_data_field_document_author';
+  $handler->display->display_options['filters']['field_document_author_tid']['field'] = 'field_document_author_tid';
+  $handler->display->display_options['filters']['field_document_author_tid']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['filters']['field_document_author_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['operator_id'] = 'field_document_author_tid_op';
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['label'] = 'Document Author';
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['operator'] = 'field_document_author_tid_op';
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['identifier'] = 'field_document_author_tid';
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_author_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_document_author_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_author_tid']['vocabulary'] = 'document_authors';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');

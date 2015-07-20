@@ -143,6 +143,196 @@ function gcfsikno_library_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   $export['node_edit__library_resource'] = $handler;
 
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__resource';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -98;
+  $handler->conf = array(
+    'title' => 'Resource',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Author',
+        'keyword' => 'author',
+        'name' => 'entity_from_schema:uid-node-user',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'name' => 'resource',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'library_resource' => 'library_resource',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'spartan_twocol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '89bb2a18-d999-4f69-88f1-0f45c46ccd8a';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-03e0e043-52fc-49f4-9441-5cd8bd818c6c';
+    $pane->panel = 'left';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '03e0e043-52fc-49f4-9441-5cd8bd818c6c';
+    $display->content['new-03e0e043-52fc-49f4-9441-5cd8bd818c6c'] = $pane;
+    $display->panels['left'][0] = 'new-03e0e043-52fc-49f4-9441-5cd8bd818c6c';
+    $pane = new stdClass();
+    $pane->pid = 'new-4f9b09ec-84fb-47f4-bda1-768da1178dd3';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_user_avatar';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'file_rendered',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'file_view_mode' => 'teaser',
+      ),
+      'context' => 'relationship_entity_from_schema:uid-node-user_1',
+      'override_title' => 1,
+      'override_title_text' => 'Uploaded by',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '4f9b09ec-84fb-47f4-bda1-768da1178dd3';
+    $display->content['new-4f9b09ec-84fb-47f4-bda1-768da1178dd3'] = $pane;
+    $display->panels['right'][0] = 'new-4f9b09ec-84fb-47f4-bda1-768da1178dd3';
+    $pane = new stdClass();
+    $pane->pid = 'new-3d008af7-3fe3-48cd-9544-0a3ee6efde04';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'name_formatter',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'markup' => 0,
+        'output' => 'default',
+        'format' => 'default',
+        'multiple' => 'default',
+        'multiple_delimiter' => ', ',
+        'multiple_and' => 'text',
+        'multiple_delimiter_precedes_last' => 'never',
+        'multiple_el_al_min' => '3',
+        'multiple_el_al_first' => '1',
+      ),
+      'context' => 'relationship_entity_from_schema:uid-node-user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3d008af7-3fe3-48cd-9544-0a3ee6efde04';
+    $display->content['new-3d008af7-3fe3-48cd-9544-0a3ee6efde04'] = $pane;
+    $display->panels['right'][1] = 'new-3d008af7-3fe3-48cd-9544-0a3ee6efde04';
+    $pane = new stdClass();
+    $pane->pid = 'new-48dd4634-e3af-4111-8a15-c73c63d4021f';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_user_bio';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'relationship_entity_from_schema:uid-node-user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '48dd4634-e3af-4111-8a15-c73c63d4021f';
+    $display->content['new-48dd4634-e3af-4111-8a15-c73c63d4021f'] = $pane;
+    $display->panels['right'][2] = 'new-48dd4634-e3af-4111-8a15-c73c63d4021f';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-3d008af7-3fe3-48cd-9544-0a3ee6efde04';
+  $handler->conf['display'] = $display;
+  $export['node_view__resource'] = $handler;
+
   return $export;
 }
 

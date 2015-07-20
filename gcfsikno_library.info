@@ -70,6 +70,7 @@ features[file_type][] = presentation
 features[menu_links][] = main-menu_library:library
 features[node][] = library_resource
 features[page_manager_handlers][] = node_edit__library_resource
+features[page_manager_handlers][] = node_view__resource
 features[page_manager_pages][] = resource_library
 features[taxonomy][] = document_authors
 features[taxonomy][] = resource_type
