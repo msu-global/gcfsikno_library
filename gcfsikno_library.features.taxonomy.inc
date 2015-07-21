@@ -10,9 +10,9 @@
 function gcfsikno_library_taxonomy_default_vocabularies() {
   return array(
     'document_authors' => array(
-      'name' => 'Document Authors',
+      'name' => 'Resource Author',
       'machine_name' => 'document_authors',
-      'description' => '',
+      'description' => 'The author of the referenced resource.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

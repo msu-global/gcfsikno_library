@@ -239,13 +239,19 @@ function gcfsikno_library_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: File: Document Author */
+  /* Field: File: Presentation Author */
   $handler->display->display_options['fields']['field_document_author']['id'] = 'field_document_author';
   $handler->display->display_options['fields']['field_document_author']['table'] = 'field_data_field_document_author';
   $handler->display->display_options['fields']['field_document_author']['field'] = 'field_document_author';
   $handler->display->display_options['fields']['field_document_author']['relationship'] = 'field_resource_fid';
+  $handler->display->display_options['fields']['field_document_author']['label'] = 'Resource Author';
   $handler->display->display_options['fields']['field_document_author']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_document_author']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
@@ -291,7 +297,7 @@ function gcfsikno_library_views_default_views() {
   );
   $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'resource_type';
-  /* Filter criterion: File: Document Author (field_document_author) */
+  /* Filter criterion: File: Presentation Author (field_document_author) */
   $handler->display->display_options['filters']['field_document_author_tid']['id'] = 'field_document_author_tid';
   $handler->display->display_options['filters']['field_document_author_tid']['table'] = 'field_data_field_document_author';
   $handler->display->display_options['filters']['field_document_author_tid']['field'] = 'field_document_author_tid';
